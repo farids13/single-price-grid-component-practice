@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Inter:wght@400;700&family=Josefin+Sans:wght@300;400;600&family=Karla:wght@400;700&family=Kumbh+Sans:wght@700&family=League+Spartan:wght@400;700&family=Lexend+Deca:wght@400;700&family=Montserrat:wght@600&family=Open+Sans&family=Outfit:wght@100;300;400;600&family=Overpass:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | Single Price Grid Component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    footer{
+      position: fixed;
+      bottom: 0;
+    }
+    body{
+      /* background: url(./design/desktop-design.jpg) no-repeat center fixed; */
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color:hsl(204, 43%, 93%);
+      margin: 0;
+      padding: 0;
+      
+    }
+    .container{
+      width: 635px;
+      background-color: rgb(243, 243, 247);
+      height: 470px;
+      box-shadow: 0 0 30px rgb(189, 187, 187);
+      border-radius: 5px;
+      overflow: hidden;
+      font-family: 'Karla';
+      transition: 0.5s ease;
+    }
+    .top {
+      height: 155px;
+      margin-left: 38px;
+      margin-top: 39px;
+      letter-spacing: 0.5px;
+      font-size: 15px;
+      width: 85%;
+    }
+    .top > h2{
+      letter-spacing: 0.2px;
+      margin-top: 25px;
+      font-size: 18px;
+      font-weight: 400;
+      color: hsl(71, 73%, 54%);
+    }
+    .top > p{
+      margin-top: -3px;
+      letter-spacing: 0.3px;
+      line-height: 25px;
+      color: hsl(203, 17%, 65%, 0.8);
+    }
+    .bottom{
+      display: flex;
+      height: 260px;
+      margin-top: 20px;
+    }
+    .price-container{
+      width: 50%;
+      height: 100%;
+      padding-left: 40px;
+      padding-top: 30px;
+      color: white;
+      box-sizing: border-box;
+      background-color: hsl(179, 62%, 43%);
+    }
+    .price-container > h2{
+      font-size: 18px;
+      margin: 0;
+      margin-top: 10px;
+    }
+    .price{
+      margin-top: 15px;
+      color:  hsl(204, 43%, 93%, 0.5);
+      box-sizing: border-box;
+    }
+    .price > b{
+      margin-right: 5px;
+      color: white;
+      font-size: 32px;
+    }
+    .price-container > p{
+      margin-top: 10px;
+      letter-spacing: -0.2px;
+    }
+    .price-container > button{
+      margin-top: 15px;
+      width: 237px;
+      height: 50px;
+      border-radius: 5px;
+      color: white;
+      font-size: 16px;
+      background-color: hsl(71, 73%, 54%);
+    }
+    .why-us{
+      width: 240px;
+      font-size: 15px;
+      color: white;
+      line-height: 20px;
+      letter-spacing: -0.6px;
+      background-color: hsl(179, 62%, 47%);
+      padding: 25px 40px 30px 40px;
+    }
+    .why-us > p{
+      color:hsl(218, 22%, 90%);
+    }
+    @media screen and (max-width:600px) {
+      body{
+        margin-top: 10px;
+        align-items: start;
+      }
+      .container{
+        transition: 0.5s ease;
+        display: flex;
+        flex-direction: column;
+        width: 375px;
+        height: 880px
+      }
+      .top{
+        height: 280px;
+        margin-left: 30px;
+      }
+      .top > p{
+        margin-top: 25px;
+        font-size: 16px;
+        letter-spacing: 0.2px;
+        line-height: 34px;
+      }
+      .bottom{
+        flex-direction: column;
+      }
+      .price-container{
+        width: auto;
+        height: 900px;
+        padding-left: 30px;
+        padding-top: 23px;
+      }
+      .price-container > h2{
+        font-size: 22px;
+      }
+      .price > b{
+        font-size: 40px;
+        margin-right: 0px;
+      }
+      .price{
+        font-size: 18px;
+      }
+      .price-container > p{
+        font-size: 19px;
+      }
+      .price-container > button{
+        width: 315px;
+        height: 60px;
+        margin-bottom: 30px;
+      }
+      .why-us{
+        padding-left: 30px;
+        padding-top: 6px;
+        height: 600px;
+      }
+      .why-us > h1{
+        font-size: 22px;
+      }
+      .why-us{
+        width: auto;
+        padding-right: 100px;
+      }
+      .why-us > p{
+        margin-top: 20px;
+        font-size: 16px;
+        letter-spacing: 0.2px;
+        line-height: 24px;
+      }
+    }
+    *{
+      /* outline: 1px solid red; */
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <article class="top">
+      <h1>Join our community</h1>
+      <h2>30-day, hassle-free money back guarantee</h2>
+      <p>
+        Gain access to our full library of tutorials along with expert code reviews.
+        Perfect for any developers who are serious about honing their skills.
+      </p>
+    </article>
+    <article class="bottom">
+      <article class="price-container">
+        <h2>Monthly Subscription</h2>
+        <div class="price"><b>&dollar;29 </b>per month</div>
+        <p>Full access for less than &dollar;1 a day</p>
+        <button class="sign-up">Sign Up</button>
+      </article>
+      <article class="why-us">
+        <h1>Why Us</h1>
+        <p>
+          Tutorials by industry experts
+          Peer &amp; expert code review
+          Coding exercises
+          <br>Access to our GitHub repos
+          Community forum
+          <br>Flashcard decks
+          <br>New videos every week
+        </p>
+      </article>
+    </article>
+  </main>
+  
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Farid Satria</a>.
+    </p>
+  </footer>
+</body>
+</html>
